@@ -18,6 +18,13 @@ Validate output with the MCP CLI's offline analyzer:
     python3 -m gexbot.pine_render --file tests/fixtures/gex_levels_live.sample.json > /tmp/gex.pine
     node ~/tradingview-mcp/src/cli/index.js pine analyze -f /tmp/gex.pine
 
+A readable standalone export of the indicator (rendered from the sample frame)
+is checked in at ``pine/gexbot_spx_levels.pine`` so the Pine source is
+discoverable without running this generator — see ``pine/README.md``. Regenerate
+it the same way, redirecting to that path:
+
+    python3 -m gexbot.pine_render --file tests/fixtures/gex_levels_live.sample.json > pine/gexbot_spx_levels.pine
+
 Design notes
 ------------
 * Toggle inputs have STABLE titles/types across every render — only the baked
