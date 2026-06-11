@@ -125,3 +125,7 @@ sudo systemctl enable --now gexbot-gex-stream gexbot-tv-publisher
   validate output with the MCP CLI's `pine analyze` (static) or `pine check`
   (server-side compile) — neither needs the market open.
 - Extracted from a larger trading system to run standalone.
+
+## License
+
+[MIT](LICENSE) © 2026 Karl Schwende
