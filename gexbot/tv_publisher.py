@@ -7,7 +7,7 @@ JSON to a remote website, this headless daemon:
 
   1. reads the live GEX frame (``gex_levels_live.json``, written by the
      ``gex-stream`` daemon every ~12s),
-  2. renders it into a self-contained Pine v5 indicator
+  2. renders it into a self-contained Pine v6 indicator
      (``gexbot.pine_render.render_pine``),
   3. pushes that source onto the running TradingView Desktop chart by shelling
      out to the local TradingView MCP CLI (``tv pine set`` + ``tv pine compile``),

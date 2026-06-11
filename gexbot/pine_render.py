@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pine Renderer — GEX levels → a self-contained TradingView Pine v5 indicator
+Pine Renderer — GEX levels → a self-contained TradingView Pine v6 indicator
 ===========================================================================
 Replaces the old web/Cloudflare chart-feed path. Instead of serving JSON to a
 remote site, we bake the live GEX frame (walls, gamma flip/peak, volume walls,
@@ -71,7 +71,7 @@ def _array_from(vals: list[str]) -> str:
 
 
 def render_pine(gex: dict, *, indicator_name: str = INDICATOR_NAME) -> str:
-    """Render a full Pine v5 indicator source string from a GEX frame dict
+    """Render a full Pine v6 indicator source string from a GEX frame dict
     (the shape written to ``gex_levels_live.json`` by ``build_gex_result``).
     """
     spot = gex.get("spot")
