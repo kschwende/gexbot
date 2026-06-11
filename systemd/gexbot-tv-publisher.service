@@ -1,0 +1,25 @@
+[Unit]
+# Pushes the live GEX frame onto the local TradingView Desktop chart as a Pine
+# indicator. MUST run on the same machine as TradingView Desktop + the
+# tradingview-mcp node CLI (it shells out to that CLI over CDP port 9222).
+Description=gexbot TV Publisher — render GEX levels → local TradingView Pine indicator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=youruser
+WorkingDirectory=/home/youruser/gexbot
+ExecStart=/home/youruser/gexbot/.venv/bin/python3 -u -m gexbot.tv_publisher
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/youruser/gexbot
+# Path to the tradingview-mcp CLI entry + node binary (see .env / README).
+Environment=GEXBOT_TV_CLI=/home/youruser/tradingview-mcp/src/cli/index.js
+EnvironmentFile=-/home/youruser/gexbot/.env
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

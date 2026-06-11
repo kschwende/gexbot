@@ -1,0 +1,8 @@
+# gexbot — SPX gamma chart feed + live GEX streamer (tastytrade only, no Databento)
+# Pin tastytrade: 12.3+ has breaking session/streaming changes.
+tastytrade==12.2.0
+starlette>=0.28,<2
+uvicorn>=0.23
+python-dotenv>=1.0
+yfinance>=0.2          # SPX spot fallback when the DXLink cash-index tick is quiet
+tzdata                 # zoneinfo data on minimal/container images

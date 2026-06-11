@@ -1,0 +1,15 @@
+# Secrets
+.env
+
+# Live data (regenerated at runtime)
+data/*.json
+data/*.pine
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/

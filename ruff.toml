@@ -1,0 +1,12 @@
+line-length = 120
+
+[lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = [
+    "E501",  # line length handled by formatter / not enforced hard
+]
+
+[lint.per-file-ignores]
+# gamma/GEX math uses `l` for "level" throughout — ambiguous-name lint is noise
+# here.
+"gexbot/gex_engine.py" = ["E741"]

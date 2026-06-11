@@ -1,0 +1,20 @@
+[Unit]
+Description=gexbot GEX Stream — persistent live 0DTE gamma (writes data/gex_levels_live.json)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=youruser
+WorkingDirectory=/home/youruser/gexbot
+ExecStart=/home/youruser/gexbot/.venv/bin/python3 -u -m gexbot.gex_stream_service
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/youruser/gexbot
+EnvironmentFile=-/home/youruser/gexbot/.env
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
